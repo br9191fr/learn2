@@ -9,6 +9,7 @@
             price: '19.99'
         }
     ];
+    let showModal = false;
 
     function addToCard(event) {
         console.log(event.detail);
@@ -24,10 +25,15 @@
              on:delete={deleteProduct}
     />
 {/each}
+<button on:click={() => showModal = true}>Show Modal</button>
 
-<Modal>
- <h1>Hello</h1>
-    <h2>Bruno</h2>
-</Modal>
-
-
+{#if showModal}
+    <Modal
+    on:cancel={() => showModal = false}
+    on:close={() => showModal = false}
+    >
+        <h1 slot="header">Hello !</h1>
+        <h2>Bruno</h2>
+        <button slot="footer" on:click={() => showModal = false}>Confirm</button>
+    </Modal>
+{/if}
