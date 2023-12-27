@@ -16,8 +16,7 @@
     }
 </script>
 {#each products as product}
-<Product title={product.title}
-         price={product.price}
+<Product {...product}
          on:add-to-card={addToCard}
          on:delete={deleteProduct}
 />
