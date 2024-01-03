@@ -32,10 +32,11 @@
     <Modal
     on:cancel={() => showModal = false}
     on:close={() => showModal = false}
-    let:didAgree={closeable}
-    >
+    let:didAgree={closeable}>
         <h1 slot="header">Hello !</h1>
         <h2>Bruno</h2>
-        <button slot="footer" on:click={() => showModal = false} disabled={!closeable}>Confirm</button>
+        <button slot="footer"
+                on:click={() => showModal = false}
+                disabled={!closeable}>Confirm</button>
     </Modal>
 {/if}
